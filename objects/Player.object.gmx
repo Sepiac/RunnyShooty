@@ -65,6 +65,8 @@ if (mouse_check_button_pressed(mb_left)) {
         speed = 10;
         direction = point_direction(x, y, mouse_x, mouse_y);
         image_angle = point_direction(x, y, mouse_x, mouse_y) - 90;
+        hspeed += deltaX;
+        vspeed += deltaY;
     }
 }
 </string>
