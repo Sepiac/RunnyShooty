@@ -25,39 +25,59 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Keyboard and mouse input handler
+            <string>///Player Movement
 
 var playerSpeed = 5;
 
-var deltaX = 0;
-var deltaY = 0;
+self.deltaX = 0;
+self.deltaY = 0;
 
 if(keyboard_check(ord('W')) &amp;&amp; keyboard_check(ord('A'))) {
-    deltaY = -playerSpeed;
-    deltaX = -playerSpeed;
+    self.deltaY = -playerSpeed;
+    self.deltaX = -playerSpeed;
 } else if (keyboard_check(ord('A')) &amp;&amp; keyboard_check(ord('S'))) {
-    deltaX = -playerSpeed;
-    deltaY = playerSpeed;
+    self.deltaX = -playerSpeed;
+    self.deltaY = playerSpeed;
 } else if (keyboard_check(ord('S')) &amp;&amp; keyboard_check(ord('D'))) {
-    deltaY = playerSpeed;
-    deltaX = playerSpeed
+    self.deltaY = playerSpeed;
+    self.deltaX = playerSpeed
 } else if (keyboard_check(ord('D')) &amp;&amp; keyboard_check(ord('W'))) {
-    deltaX = playerSpeed
-    deltaY = -playerSpeed;
+    self.deltaX = playerSpeed
+    self.deltaY = -playerSpeed;
 } else if (keyboard_check(ord('W'))) {
-    deltaY = -playerSpeed;
+    self.deltaY = -playerSpeed;
 } else if (keyboard_check(ord('A'))) {
-    deltaX = -playerSpeed;
+    self.deltaX = -playerSpeed;
 } else if (keyboard_check(ord('S'))) {
-    deltaY = playerSpeed;
+    self.deltaY = playerSpeed;
 } else if (keyboard_check(ord('D'))) {
-    deltaX = playerSpeed
+    self.deltaX = playerSpeed
 }
 
-x += deltaX;
-y += deltaY;
-
-window_mouse_set(mouse_x + deltaX, mouse_y + deltaY);
+x += self.deltaX;
+y += self.deltaY;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Player Shooting
+window_mouse_set(mouse_x + self.deltaX, mouse_y + self.deltaY);
 
 if (mouse_check_button_pressed(mb_left)) {
     var bullet = instance_create(x + cos(direction), y + sin(direction), Bullet);
@@ -65,8 +85,8 @@ if (mouse_check_button_pressed(mb_left)) {
         speed = 10;
         direction = point_direction(x, y, mouse_x, mouse_y);
         image_angle = point_direction(x, y, mouse_x, mouse_y) - 90;
-        hspeed += deltaX;
-        vspeed += deltaY;
+        hspeed += other.deltaX;
+        vspeed += other.deltaY;
     }
 }
 </string>
