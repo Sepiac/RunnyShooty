@@ -54,8 +54,12 @@ if(keyboard_check(ord('W')) &amp;&amp; keyboard_check(ord('A'))) {
     self.deltaX = playerSpeed
 }
 
-x += self.deltaX;
-y += self.deltaY;
+if(!(x + deltaX &lt; + 0 or x + deltaX &gt; window_get_width())) {
+    x += self.deltaX;
+}
+if(!(y + deltaY &lt; + 0 or y + deltaY &gt; window_get_height())) {
+    y += self.deltaY;
+}
 </string>
           </argument>
         </arguments>
