@@ -81,7 +81,7 @@ if(!(y + deltaY &lt; + 0 or y + deltaY &gt; window_get_height())) {
           <argument>
             <kind>1</kind>
             <string>///Player Shooting
-window_mouse_set(mouse_x + self.deltaX, mouse_y + self.deltaY);
+window_mouse_set(window_mouse_get_x() + self.deltaX, window_mouse_get_y() + self.deltaY);
 
 if (mouse_check_button_pressed(mb_left)) {
     var bullet = instance_create(x + cos(direction), y + sin(direction), Bullet);
