@@ -25,8 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Update sprite direction
+            <string>///Move
 image_angle = point_direction(x, y, Player.x, Player.y) - 90;
+
+var wanderRange = 200;
+move_towards_point(Player.x + random_range(-wanderRange, wanderRange), Player.y + random_range(-wanderRange, wanderRange), 3);
+
 </string>
           </argument>
         </arguments>
