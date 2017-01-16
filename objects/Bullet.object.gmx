@@ -43,12 +43,7 @@ if(target != noone) {
     instance_destroy();
 }
 
-
-collision_line( x, y, x + hspeed, y + vspeed, Shield, false, true );
-
-target = instance_place(x, y, Shield);
-
-if(target != noone) {
+if(collision_line( x, y, x + hspeed, y + vspeed, Shield, false, true )) {
     instance_destroy();
 }
 </string>
@@ -73,7 +68,32 @@ if(target != noone) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>var target = instance_place(x, y, Target);
+
+if(target != noone) {
+    with(target) {
+        instance_destroy();
+    }
+    instance_destroy();
+}
+
+target = instance_place(x, y, ShieldTarget);
+
+if(target != noone) {
+    with(target) {
+        instance_destroy();
+    }
+    instance_destroy();
+}
+
+
+collision_line( x, y, x + hspeed, y + vspeed, Shield, false, true );
+
+target = instance_place(x, y, Shield);
+
+if(target != noone) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
