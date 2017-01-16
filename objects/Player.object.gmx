@@ -84,7 +84,7 @@ if(!(y + deltaY &lt; + 0 or y + deltaY &gt; window_get_height())) {
 window_mouse_set(window_mouse_get_x() + self.deltaX, window_mouse_get_y() + self.deltaY);
 
 if (mouse_check_button_pressed(mb_left)) {
-    var bullet = instance_create(x + cos(direction), y + sin(direction), Bullet);
+    var bullet = instance_create(x, y, Bullet);
     with(bullet) {
         speed = 10;
         direction = point_direction(x, y, mouse_x, mouse_y);
