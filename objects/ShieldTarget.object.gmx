@@ -48,7 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(self.shield) {
+            <string>global.score += 20;
+with(self.shield) {
     instance_destroy();
 }
 </string>

@@ -24,6 +24,7 @@
     <object>objects\Target</object>
     <object>objects\ShieldTarget</object>
     <object>objects\Shield</object>
+    <object>objects\Scoreboard</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\gameField</room>
