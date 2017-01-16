@@ -74,7 +74,7 @@
           <argument>
             <kind>1</kind>
             <string>///Rotate slowly towards player
-image_angle -= sin(degtorad(image_angle - point_direction(x, y, Player.x, Player.y))) * 2;
+image_angle -= sin(degtorad(image_angle - point_direction(x, y, Player.x, Player.y))/2) * 3;
 </string>
           </argument>
         </arguments>
