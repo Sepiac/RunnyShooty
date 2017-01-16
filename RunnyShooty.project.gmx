@@ -10,6 +10,8 @@
     <sprite>sprites\pointerSprite</sprite>
     <sprite>sprites\bulletSprite</sprite>
     <sprite>sprites\targetSprite</sprite>
+    <sprite>sprites\shieldTargetSprite</sprite>
+    <sprite>sprites\shieldSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -20,6 +22,8 @@
     <object>objects\Init</object>
     <object>objects\Bullet</object>
     <object>objects\Target</object>
+    <object>objects\ShieldTarget</object>
+    <object>objects\Shield</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\gameField</room>
