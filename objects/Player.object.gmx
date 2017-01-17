@@ -86,7 +86,9 @@ var newMouseY = window_mouse_get_y() + self.deltaY;
 
 x = newX;
 y = newY;
-window_mouse_set(newMouseX, newMouseY);
+
+Cursor.x += self.deltaX;
+Cursor.y += self.deltaY;
 </string>
           </argument>
         </arguments>
