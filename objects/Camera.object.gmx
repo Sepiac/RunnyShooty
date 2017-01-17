@@ -51,15 +51,18 @@ depth = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var angleToMouse = point_direction(x, y, mouse_x, mouse_y);
+            <string>if(instance_exists(Player)) {
+   var angleToMouse = point_direction(x, y, mouse_x, mouse_y);
 
-var xDestination = Player.x + cos(degtorad(angleToMouse)) * min(radius, distance_to_point(mouse_x, mouse_y));
-var yDestination = Player.y - sin(degtorad(angleToMouse)) * min(radius, distance_to_point(mouse_x, mouse_y));
-x += (xDestination - x)/15;
-y += (yDestination - y)/15;
+   var xDestination = Player.x + cos(degtorad(angleToMouse)) * min(radius, distance_to_point(mouse_x, mouse_y));
+   var yDestination = Player.y - sin(degtorad(angleToMouse)) * min(radius, distance_to_point(mouse_x, mouse_y));
+   x += (xDestination - x)/15;
+   y += (yDestination - y)/15;
 
-view_xview = x - view_wview/2;
-view_yview = y - view_hview/2;
+   view_xview = x - view_wview/2;
+   view_yview = y - view_hview/2;
+}
+
 </string>
           </argument>
         </arguments>
