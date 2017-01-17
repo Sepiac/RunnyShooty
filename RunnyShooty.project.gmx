@@ -27,6 +27,7 @@
     <object>objects\Shield</object>
     <object>objects\Scoreboard</object>
     <object>objects\Camera</object>
+    <object>objects\Cursor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\gameField</room>
