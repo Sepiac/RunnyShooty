@@ -83,13 +83,9 @@ var newY = y + self.deltaY;
 var newMouseX = window_mouse_get_x() + self.deltaX;
 var newMouseY = window_mouse_get_y() + self.deltaY;
 
-if(!(x + deltaX &lt; + 0 or x + deltaX &gt; window_get_width())) {
-    x = newX;   
-}
-if(!(y + deltaY &lt; + 0 or y + deltaY &gt; window_get_height())) {
-    y = newY;
-}
 
+x = newX;
+y = newY;
 window_mouse_set(newMouseX, newMouseY);
 </string>
           </argument>

@@ -12,6 +12,7 @@
     <sprite>sprites\targetSprite</sprite>
     <sprite>sprites\shieldTargetSprite</sprite>
     <sprite>sprites\shieldSprite</sprite>
+    <sprite>sprites\CameraSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -25,6 +26,7 @@
     <object>objects\ShieldTarget</object>
     <object>objects\Shield</object>
     <object>objects\Scoreboard</object>
+    <object>objects\Camera</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\gameField</room>
