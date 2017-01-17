@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.mouseXDifference = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Player Movement
+            <string>///Player and Cursor Movement
 
 var playerSpeed = 5;
 
@@ -54,12 +77,20 @@ if(keyboard_check(ord('W')) &amp;&amp; keyboard_check(ord('A'))) {
     self.deltaX = playerSpeed
 }
 
+var newX = x + self.deltaX;
+var newY = y + self.deltaY;
+
+var newMouseX = window_mouse_get_x() + self.deltaX;
+var newMouseY = window_mouse_get_y() + self.deltaY;
+
 if(!(x + deltaX &lt; + 0 or x + deltaX &gt; window_get_width())) {
-    x += self.deltaX;
+    x = newX;   
 }
 if(!(y + deltaY &lt; + 0 or y + deltaY &gt; window_get_height())) {
-    y += self.deltaY;
+    y = newY;
 }
+
+window_mouse_set(newMouseX, newMouseY);
 </string>
           </argument>
         </arguments>
@@ -81,7 +112,6 @@ if(!(y + deltaY &lt; + 0 or y + deltaY &gt; window_get_height())) {
           <argument>
             <kind>1</kind>
             <string>///Player Shooting
-window_mouse_set(window_mouse_get_x() + self.deltaX, window_mouse_get_y() + self.deltaY);
 
 if (mouse_check_button_pressed(mb_left)) {
     var bullet = instance_create(x, y, Bullet);
@@ -115,6 +145,32 @@ if (mouse_check_button_pressed(mb_left)) {
             <kind>1</kind>
             <string>///Update sprite direction
 image_angle = point_direction(x, y, mouse_x, mouse_y) - 90;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_text(0, 30, "Mouse Info: " + string(mouse_x) + ", " +string(mouse_y));
+draw_text(0, 60, "Mouse Info: " + string(window_mouse_get_x()) + ", " +string(window_mouse_get_y()));
+draw_text(0, 90, self.mouseXDifference);
+draw_self();
 </string>
           </argument>
         </arguments>
