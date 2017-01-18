@@ -142,8 +142,8 @@ if (mouse_check_button_pressed(mb_left)) {
     var bullet = instance_create(x + lengthdir_x(bulletSpawnDistance, image_angle), y + lengthdir_y(bulletSpawnDistance, image_angle), Bullet);
     with(bullet) {
         speed = 10;
-        direction = point_direction(x, y, mouse_x, mouse_y);
-        image_angle = point_direction(x, y, mouse_x, mouse_y);
+        direction = other.image_angle;
+        image_angle = other.image_angle;
         hspeed += other.deltaX;
         vspeed += other.deltaY;
     }
