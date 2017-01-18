@@ -138,7 +138,8 @@ Camera.y += self.deltaY;
             <string>///Player Shooting
 
 if (mouse_check_button_pressed(mb_left)) {
-    var bullet = instance_create(x, y, Bullet);
+    var bulletSpawnDistance = 20;
+    var bullet = instance_create(x + lengthdir_x(bulletSpawnDistance, image_angle), y + lengthdir_y(bulletSpawnDistance, image_angle), Bullet);
     with(bullet) {
         speed = 10;
         direction = point_direction(x, y, mouse_x, mouse_y);
